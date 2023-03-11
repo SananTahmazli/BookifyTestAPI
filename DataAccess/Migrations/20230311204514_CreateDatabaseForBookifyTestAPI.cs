@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DataAccess.Migrations
 {
-    public partial class CreateDatabaseForAPI : Migration
+    public partial class CreateDatabaseForBookifyTestAPI : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -102,6 +102,7 @@ namespace DataAccess.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     FullName = table.Column<string>(type: "text", nullable: false),
                     Username = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
                     Salt = table.Column<string>(type: "text", nullable: false),
                     Hash = table.Column<string>(type: "text", nullable: false),
                     RoleId = table.Column<int>(type: "integer", nullable: false),
@@ -126,14 +127,14 @@ namespace DataAccess.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedUserId", "Name", "UpdatedAt", "UpdatedUserId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 3, 8, 14, 27, 21, 597, DateTimeKind.Utc).AddTicks(47), 1, "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 },
-                    { 2, new DateTime(2023, 3, 8, 14, 27, 21, 597, DateTimeKind.Utc).AddTicks(70), 1, "User", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 }
+                    { 1, new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(1540), 1, "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 },
+                    { 2, new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(1566), 1, "User", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "CreatedAt", "CreatedUserId", "FullName", "Hash", "RoleId", "Salt", "UpdatedAt", "UpdatedUserId", "Username" },
-                values: new object[] { 1, new DateTime(2023, 3, 8, 14, 27, 21, 597, DateTimeKind.Utc).AddTicks(1237), 1, "Sanan Tahmazli", "��c�^p��k���O�D{<f�󝿦�|л�", 1, "kcZA4Vr6W990RVp2ZKE+kPufK9nfvdaqfj3JWK81LnjcZINz6ccNbyKEIuZ61FMNA7jRvxMPRVD7i5+FK6UlJhij3RWZFuKdlBdYvq/3swl4bgaFMy3JpCca7AMNMeY3mxwvIk5cn1xOLDjexLD3fPfZY/92IG9lQ+k/dYW+dluAYDb9Ef3QCvIq/OT010e6sGCfP2cZoAc8iAjSfNMpsxgQsrakFDy01+aw4F/9Bghjf9BQCO+Up028PZM/eM2IVjs2pzqrB03NCiWcVyY9Sp48q/sVoCRPvniqhNSGRVoqMzBNDpShF8QeFEABtmLZQplynpwCZeUspGVVFdhL", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, "Admin" });
+                columns: new[] { "Id", "CreatedAt", "CreatedUserId", "Email", "FullName", "Hash", "RoleId", "Salt", "UpdatedAt", "UpdatedUserId", "Username" },
+                values: new object[] { 1, new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(2713), 1, "company.bookify@gmail.com", "Sanan Tahmazli", "c����Jb�ՋFM�g�ޖ��GqX-�Lrc�N��", 1, "iJ6jbGt5Gn0dDzADnb43LLVMwyhATJ/SmtVszcgDzRtByqAfl2DIM4G9Z7Z6wMIPDabJPeoemMuImGhzEwiC6iqSvgYna9rRgDK95knDgP9HFZvNwhWMeNslbxgrIiBUs0dZo3R8FrlliIiWITswEXbeExT7HOxD2MBI9PoaLN7ITjLDcB4pqlqddIlZG0vz2Pw/8be9ldMQ/IQkWuEeDT3NKYVw5yY5ixulgMySw7orLGo7tM4rX47HYXkF2MvUbkmbmGlXPN7dTYY6gdsvv7WFNXSmuxrKn/BdlBJoBDYznPOAs200+gOnmAK4omeWWvfnxX+kPFpS3P1cQ4A1", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, "Admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_AuthorId",

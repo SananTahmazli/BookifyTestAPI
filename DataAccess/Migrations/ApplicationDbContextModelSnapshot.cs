@@ -157,7 +157,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 3, 8, 14, 27, 21, 597, DateTimeKind.Utc).AddTicks(47),
+                            CreatedAt = new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(1540),
                             CreatedUserId = 1,
                             Name = "Admin",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -166,7 +166,7 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2023, 3, 8, 14, 27, 21, 597, DateTimeKind.Utc).AddTicks(70),
+                            CreatedAt = new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(1566),
                             CreatedUserId = 1,
                             Name = "User",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -187,6 +187,10 @@ namespace DataAccess.Migrations
 
                     b.Property<int>("CreatedUserId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("FullName")
                         .IsRequired()
@@ -223,12 +227,13 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2023, 3, 8, 14, 27, 21, 597, DateTimeKind.Utc).AddTicks(1237),
+                            CreatedAt = new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(2713),
                             CreatedUserId = 1,
+                            Email = "company.bookify@gmail.com",
                             FullName = "Sanan Tahmazli",
-                            Hash = "��c�^p��k���O�D{<f�󝿦�|л�",
+                            Hash = "c����Jb�ՋFM�g�ޖ��GqX-�Lrc�N��",
                             RoleId = 1,
-                            Salt = "kcZA4Vr6W990RVp2ZKE+kPufK9nfvdaqfj3JWK81LnjcZINz6ccNbyKEIuZ61FMNA7jRvxMPRVD7i5+FK6UlJhij3RWZFuKdlBdYvq/3swl4bgaFMy3JpCca7AMNMeY3mxwvIk5cn1xOLDjexLD3fPfZY/92IG9lQ+k/dYW+dluAYDb9Ef3QCvIq/OT010e6sGCfP2cZoAc8iAjSfNMpsxgQsrakFDy01+aw4F/9Bghjf9BQCO+Up028PZM/eM2IVjs2pzqrB03NCiWcVyY9Sp48q/sVoCRPvniqhNSGRVoqMzBNDpShF8QeFEABtmLZQplynpwCZeUspGVVFdhL",
+                            Salt = "iJ6jbGt5Gn0dDzADnb43LLVMwyhATJ/SmtVszcgDzRtByqAfl2DIM4G9Z7Z6wMIPDabJPeoemMuImGhzEwiC6iqSvgYna9rRgDK95knDgP9HFZvNwhWMeNslbxgrIiBUs0dZo3R8FrlliIiWITswEXbeExT7HOxD2MBI9PoaLN7ITjLDcB4pqlqddIlZG0vz2Pw/8be9ldMQ/IQkWuEeDT3NKYVw5yY5ixulgMySw7orLGo7tM4rX47HYXkF2MvUbkmbmGlXPN7dTYY6gdsvv7WFNXSmuxrKn/BdlBJoBDYznPOAs200+gOnmAK4omeWWvfnxX+kPFpS3P1cQ4A1",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UpdatedUserId = 0,
                             Username = "Admin"
