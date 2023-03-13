@@ -7,6 +7,7 @@ using Repositories.Abstracts;
 using System.Security.Claims;
 using System;
 using Microsoft.AspNetCore.Authorization;
+using DataAccess.Entities;
 
 namespace Presentation.Controllers
 {
@@ -15,10 +16,12 @@ namespace Presentation.Controllers
     public class LoginController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
+        private readonly IEmailRepository _emailRepository;
 
-        public LoginController(IUserRepository userRepository)
+        public LoginController(IUserRepository userRepository, IEmailRepository emailRepository)
         {
             _userRepository = userRepository;
+            _emailRepository = emailRepository;
         }
 
         [HttpPost]
@@ -29,6 +32,14 @@ namespace Presentation.Controllers
             try
             {
                 await _userRepository.CreateAsync(userDTO);
+
+                var msg = new Message(
+                    new string[] { userDTO.Email }, "Registration", "" +
+                    $"<p>Dear { userDTO.Username }! <br> " +
+                    $"You registered successfully!</p>"
+                    );
+
+                _emailRepository.SendEmail(msg);
                 return Ok();
             }
             catch (Exception exception)
@@ -77,6 +88,7 @@ namespace Presentation.Controllers
                 new Claim("Id", userDTO.Id.ToString()),
                 new Claim("FullName", userDTO.FullName),
                 new Claim("Username", userDTO.Username),
+                new Claim("Email", userDTO.Email),
                 new Claim(ClaimTypes.Role, "Admin"),
             };
 
