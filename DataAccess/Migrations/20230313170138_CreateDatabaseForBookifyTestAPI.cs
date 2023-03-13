@@ -127,14 +127,14 @@ namespace DataAccess.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedUserId", "Name", "UpdatedAt", "UpdatedUserId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(1540), 1, "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 },
-                    { 2, new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(1566), 1, "User", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 }
+                    { 1, new DateTime(2023, 3, 13, 17, 1, 38, 123, DateTimeKind.Utc).AddTicks(6327), 1, "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 },
+                    { 2, new DateTime(2023, 3, 13, 17, 1, 38, 123, DateTimeKind.Utc).AddTicks(6354), 1, "User", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "CreatedAt", "CreatedUserId", "Email", "FullName", "Hash", "RoleId", "Salt", "UpdatedAt", "UpdatedUserId", "Username" },
-                values: new object[] { 1, new DateTime(2023, 3, 11, 20, 45, 14, 0, DateTimeKind.Utc).AddTicks(2713), 1, "company.bookify@gmail.com", "Sanan Tahmazli", "c����Jb�ՋFM�g�ޖ��GqX-�Lrc�N��", 1, "iJ6jbGt5Gn0dDzADnb43LLVMwyhATJ/SmtVszcgDzRtByqAfl2DIM4G9Z7Z6wMIPDabJPeoemMuImGhzEwiC6iqSvgYna9rRgDK95knDgP9HFZvNwhWMeNslbxgrIiBUs0dZo3R8FrlliIiWITswEXbeExT7HOxD2MBI9PoaLN7ITjLDcB4pqlqddIlZG0vz2Pw/8be9ldMQ/IQkWuEeDT3NKYVw5yY5ixulgMySw7orLGo7tM4rX47HYXkF2MvUbkmbmGlXPN7dTYY6gdsvv7WFNXSmuxrKn/BdlBJoBDYznPOAs200+gOnmAK4omeWWvfnxX+kPFpS3P1cQ4A1", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, "Admin" });
+                values: new object[] { 1, new DateTime(2023, 3, 13, 17, 1, 38, 123, DateTimeKind.Utc).AddTicks(7401), 1, "tahmazlisanan2022@gmail.com", "Sanan Tahmazli", "\\���<��|Ԩ�dIvFu�.�#C���Y��3", 1, "/Jxp1UZLgVbK9rNDxguzzM9kDWHoHHCJA/2YQD3i17+Y7XCfakpSx0qrvCKiZC0RqXosQRRapZ5RKWxuxJAzdzRmo4N0VRDwqqSKCjZcsVsf3s28R9QwyqbOq9kSFw9Be1stCot6YsUNnRre0jLvrRgRDayoR9WuXb+AUKHSgbiI6xLGCKV//S8E4ibYoCHmfMhPEdsxJEvMDLuKsWPiG29ta1bmLed1r323LvpukO30YSD1N/a4PSsvXdIYUhEYfUiSa23St/BIVcZitpjsgBXdNy5OuNRjoqfZ0Eth6OAgc05cyfbPO4z/PbSxy17mSOVJ73ZSVtMmkSgHcj6q", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, "Admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_AuthorId",
