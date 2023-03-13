@@ -46,9 +46,9 @@ namespace DataAccess.Db
                 Id = 1,
                 FullName = "Sanan Tahmazli",
                 Username = "Admin",
-                Email = "company.bookify@gmail.com",
+                Email = "tahmazlisanan2022@gmail.com",
                 Salt = salt,
-                Hash = Encryption.GenerateHash("Admin23042002", salt),
+                Hash = Encryption.GenerateHash("23042002Sanan", salt),
                 RoleId = 1,
                 CreatedAt = DateTime.UtcNow,
                 CreatedUserId = 1
