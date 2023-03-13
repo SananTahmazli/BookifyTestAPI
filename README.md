@@ -5,8 +5,8 @@
 <div>
   <h3>What are the services of "Bookify" for users?</h3>
   <p>
-    Users can register from the website and log in to their account to perform these processes. 
-    Additionally, users can view our book list and get information about each book.
+    Users can register from the website. At this time users are accepting email registration success message automatically.
+    And log in to their account to perform these processes. Additionally, users can view our book list and get information about each book.
   </p>
 </div>
 <hr>
