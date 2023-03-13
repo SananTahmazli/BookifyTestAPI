@@ -1,5 +1,6 @@
 using AutoMapper;
 using DataAccess.Db;
+using DataAccess.Entities;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Abstracts;
@@ -24,6 +25,7 @@ namespace Presentation
             builder.Services.AddScoped<IBookRepository, BookRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
+            builder.Services.AddScoped<IEmailRepository, EmailRepository>();
             builder.Services.AddDbContext<ApplicationDbContext>(
                 opt => opt.UseNpgsql(
                     builder.Configuration.GetConnectionString("ConnectionForAPI")
@@ -35,6 +37,9 @@ namespace Presentation
                     )
                 );
             builder.Services.AddSingleton(mapperConfig.CreateMapper());
+            var emailConfig = builder.Configuration.GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+            builder.Services.AddSingleton(emailConfig);
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession();
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
